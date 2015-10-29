@@ -68,7 +68,7 @@ last(names, function(lastName){
 
   //Code Here for multiply
 function multiply(num1, num2, cb) {
-  
+  cb(num1 * num2);
 }
 
 
@@ -134,10 +134,9 @@ uniq(names, function(uniqArr){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-function each(name, cb) {
-  for(var i = 0; i < name.length; i++) {
-    if(name[i] === item && i === indice) {
-      return cb(item, indice)
+function each(arr, cb) {
+  for(var i in arr) {
+      return cb(arr[i], i);
     }
   } 
 }
@@ -163,12 +162,13 @@ each(names, function(item, indice){
 
  //code here for getUserById
 
- function getUserById(obj, str, cb) {
-    for (var key in obj) {
-      obj.apply(id)  
-    }
-    
+
+var getUserById = function(users, id, callback) {
+for (var i = 0; i < users.length ; i++ ) {
+ if (users[i].id === id){
+   callback(users[i]);
  }
+}};
 
 var users = [
   {
