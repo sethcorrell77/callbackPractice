@@ -25,12 +25,16 @@ and what you should write is the sayHi function that makes the code above work,
 
 
   //Code Here for first
-  
+function first(arr, cb) {
+  cb(arr[0]);
+
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-first(names, function(firstName){
+var consoleThing = function(firstName){
   console.log('The first name in names is ' + firstName)
-});
+}
+first(names, consoleThing);
 
 
 
@@ -40,6 +44,11 @@ first(names, function(firstName){
 
 
   //Code Here for last
+function last(arr, cb){
+  cb(arr[arr.length -1])
+
+}
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -58,6 +67,10 @@ last(names, function(lastName){
 
 
   //Code Here for multiply
+function multiply(num1, num2, cb) {
+  
+}
+
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -74,6 +87,13 @@ multiply(4, 3, function(answer){
 
 
   //Code Here for contains
+
+function contains(arr, str, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    if(arr[i] === str);
+      return cb(true);
+  }
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
@@ -95,6 +115,15 @@ contains(names, 'Colt', function(result){
 
     //Code Here for uniq
 
+function uniq(arr, cb) { 
+  var uniqArr = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(uniqArr.indexOf(arr[i]) === -1){
+      uniqArr.push(arr[i]);
+    }
+   } return cb(uniqArr);
+}
+
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -105,7 +134,13 @@ uniq(names, function(uniqArr){
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
-
+function each(name, cb) {
+  for(var i = 0; i < name.length; i++) {
+    if(name[i] === item && i === indice) {
+      return cb(item, indice)
+    }
+  } 
+}
 
 
 
@@ -127,6 +162,13 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+
+ function getUserById(obj, str, cb) {
+    for (var key in obj) {
+      obj.apply(id)  
+    }
+    
+ }
 
 var users = [
   {
